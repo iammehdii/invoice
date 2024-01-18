@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  invoice-ray:
+    image: invoice-ray
+    networks:
+      - invoice-local
+      - invoice-public
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+networks:
+  invoice-local:
+    attachable: true
+  invoice-public:
+    external: true

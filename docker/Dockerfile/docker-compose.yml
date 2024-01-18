@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  invoice-ray:
+    image: invoice-ray:latest
+    container_name: invoice-ray
+    tty: true
+    build:
+      context: ../../
+      dockerfile: docker/Dockerfile/ray.Dockerfile
+#    volumes:
+#      - ./app:/srv/invoice
+    ports:
+      - "8003:8003"
+    env_file:
+      - .env
