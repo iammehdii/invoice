@@ -1,0 +1,6 @@
+.idea
+.conda
+*.pyc
+__pycache__
+*.ipynb
+*.sqlite
